@@ -1,0 +1,87 @@
+1 'Заладно'
+
+
+
+
+
+
+
+
+2 'Задание'
+#выводит числа без повторений в порядке возрастания
+def del_rep(num):
+    nums = list(set(num))
+    poryadok_nums = sorted(nums)
+    return poryadok_nums
+#Вызываем функцию
+print(del_rep('123445'))
+
+
+
+
+3 'Задание'
+#тут мы устанавливаем лимит
+def lim_max(*nums, limit):
+    max_value = -1
+    for num in nums:
+        if num < limit and num > max_value:
+            max_value = num
+    return max_value
+#Вызываем функцию
+print(lim_max(10, 20, 30, 40, 60, 70, 80, 90, 100, limit = 50))
+
+
+
+
+4 'Задание'
+
+temp = int(input('temp:')) #это нужно для удобного ввода "Температуры"
+def temp_cat(temp):
+    if temp < -20:
+        print('0 - Холодно')
+    elif temp < -20:
+        print('1 - Прохладно ')
+    elif temp <= 0:
+        print('1 - Прохладно ')
+    elif temp > 0:
+        print('2 - Зябко ')
+    elif temp <= 15:
+        print('2 - Зябко ')
+    elif temp > 15:
+        print('3 - Тепло ')
+    elif temp <= 25:
+        print('3 - Тепло  ')
+    elif temp > 25:
+        print('4 - Жарко')
+    else:
+        print('error')
+#выываем функцию
+#эта функция показывает в какрм статусе находится температура
+temp_cat(temp)
+
+
+
+
+5 'Задание'
+#этот код для проверки правельности тел. номера
+def check_phn(phones):
+    result = []
+    for telefon in phones:
+        phone_tel = ''.join(filter(str.isdigit, telefon))
+
+        if len(phone_tel) != 11:
+            result.append(-1)
+            continue
+
+        if phone_tel[0] not in ['7', '8']:
+            result.append(-1)
+            continue
+
+        result.append(phone_tel)
+    return result
+
+
+#Вызываем функцию
+phones = ['+7(123)456-7890', '8(123)456-7890', '+7 123 456 78901', '123 456 7890']
+phone_tel = check_phn(phones)
+print(phone_tel)
